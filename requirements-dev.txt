@@ -1,0 +1,4 @@
+-r requirements.txt
+pytest>=8.0
+reportlab>=4.0       # builds the PDF templates used by test_app.py
+playwright>=1.45     # tests/ui_check.py (run once: playwright install chromium)

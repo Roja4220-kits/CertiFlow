@@ -1,0 +1,16 @@
+# runtime data (real participant data and certificates: never commit)
+uploads/
+generated_certificates/
+instance/
+# python
+__pycache__/
+*.pyc
+venv/
+.venv/
+.env
+# editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+.pytest_cache/
