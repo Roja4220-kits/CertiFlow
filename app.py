@@ -319,7 +319,13 @@ def home():
 def dashboard():
     return render_template("index.html")
 
-
+@app.route("/google7f5a23b71ccaa8d3.html")
+def google_site_verification():
+    return send_from_directory(
+        app.root_path,
+        "google7f5a23b71ccaa8d3.html",
+        mimetype="text/html"
+    )
 @app.route("/api/health")
 def health():
     return jsonify({"status": "ok"})
