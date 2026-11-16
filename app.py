@@ -330,6 +330,29 @@ def google_site_verification():
 def health():
     return jsonify({"status": "ok"})
 
+@app.route("/robots.txt")
+def robots_txt():
+    return (
+        "User-agent: *\n"
+        "Allow: /\n"
+        "Disallow: /api/\n\n"
+        "Sitemap: https://certiflow-izwk.onrender.com/sitemap.xml\n",
+        200,
+        {"Content-Type": "text/plain; charset=utf-8"}
+    )
+
+
+@app.route("/sitemap.xml")
+def sitemap():
+    xml = """<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://certiflow-izwk.onrender.com/</loc>
+    </url>
+</urlset>
+"""
+    return xml, 200, {"Content-Type": "application/xml; charset=utf-8"}
+
 
 @app.route("/examples/<path:filename>")
 def download_example(filename):
